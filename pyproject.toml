@@ -1,0 +1,33 @@
+[project]
+name = "sensor-integrity-engine"
+version = "0.1.0"
+description = "Audit the instruments your reliability programme stands on."
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+license = { text = "MIT" }
+authors = [{ name = "Sumedh Bhalerao" }]
+
+dependencies = [
+    "numpy>=1.26",
+    "scipy>=1.13",
+    "pandas>=2.2",
+    "duckdb>=1.0",
+    "langgraph>=0.2",
+    "langchain-ollama>=0.1",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.6",
+    "jupyterlab>=4.2",
+    "ipykernel>=6.29",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
